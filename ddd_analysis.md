@@ -1,10 +1,3 @@
-# PHÂN TÍCH: ÁP DỤNG DDD ĐỂ CỨU VÃN "BIG BALL OF MUD"
-
-**Bối cảnh:** Dự án ngày càng phình to, code trở nên lộn xộn, chằng chịt và không có cấu trúc rõ ràng, biến thành "một đống bùn lầy" (Big Ball of Mud). Việc thêm tính năng mới mất rất nhiều thời gian và liên tục sinh ra bug ẩn. Để giải quyết dứt điểm, Team Leader đề xuất áp dụng **Domain-Driven Design (DDD)**.
-
-Dưới đây là phần phân tích chi tiết ưu nhược điểm của quyết định mang tính chiến lược này:
-
----
 
 ### 1. Ưu điểm & Giá trị đột phá của DDD
 
@@ -19,10 +12,3 @@ Dưới đây là phần phân tích chi tiết ưu nhược điểm của quy�
 * **Tốn thời gian hội thảo nghiệp vụ khổng lồ:** Lập trình viên không thể chỉ nhận Ticket và cắm mặt vào code. DDD yêu cầu Dev phải liên tục ngồi lại với Domain Experts qua các buổi Workshop (như Event Storming) kéo dài nhiều ngày để mổ xẻ nghiệp vụ. Nó tiêu tốn rất nhiều thời gian, chi phí và sự kiên nhẫn của cả hai bên.
 * **Rủi ro Over-engineering (Làm quá vấn đề):** Nếu mảng nghiệp vụ (Sub-domain) chỉ đơn thuần là các thao tác CRUD (Thêm, Sửa, Xóa, Hiển thị) dữ liệu đơn giản, việc áp dụng DDD sẽ giống như "dùng dao mổ trâu để giết gà". Nó đẻ ra một lượng lớn Boilerplate Code (code lặp) không cần thiết, làm dự án chậm chạp đi thay vì nhanh hơn.
 * **Không thấy kết quả ngay lập tức:** Trong giai đoạn đầu, tiến độ code sẽ cực kỳ chậm vì mọi người còn bận tranh luận về mô hình và thuật ngữ. Điều này dễ làm ban lãnh đạo mất kiên nhẫn.
-
----
-
-### Lời kết & Đề xuất hành động
-Đề xuất của Team Leader là **hoàn toàn chính xác và trị đúng bệnh** đối với tình trạng "Big Ball of Mud". 
-
-Tuy nhiên, lời khuyên thực tế là **KHÔNG nên áp dụng DDD cho toàn bộ hệ thống cùng lúc**. Hãy khoanh vùng đâu là phần nghiệp vụ cốt lõi quan trọng nhất hái ra tiền (Core Domain), tập trung đội ngũ giỏi nhất tổ chức hội thảo và làm DDD ở đó trước. Những phần phụ trợ (Supporting Domain) vẫn có thể dùng mô hình CRUD đơn giản để tối ưu thời gian.
